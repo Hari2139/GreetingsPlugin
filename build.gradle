@@ -1,0 +1,21 @@
+buildscript { repositories { jcenter()
+	} }
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+//The Maven plugin adds an install task to your project. 
+//This task depends on all the archives task of the archives configuration. 
+//It installs those archives to your local Maven repository. If the default location for the local repository is redefined in a Maven settings.xml, this is considered by this task.
+//To upload to a remote maven repo, see https://docs.gradle.org/current/userguide/maven_plugin.html#uploading_to_maven_repositories
+
+
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+}
+
+repositories { mavenCentral() }
+
+group='com.hari'
+version='1.0-SNAPSHOT'
+
